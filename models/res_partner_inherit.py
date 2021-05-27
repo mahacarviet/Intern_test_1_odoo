@@ -4,7 +4,7 @@ from odoo import fields, models, api
 class ResPartnerInherit(models.Model):
     _inherit = 'res.partner'
 
-    customer_discount_code = fields.Char()
+    customer_discount_code = fields.Char(compute='_compute_customer_discount_code')
 
     check_discount_code = fields.Boolean(compute='_compute_check_discount_code', store=True)
 
